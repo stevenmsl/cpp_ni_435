@@ -13,7 +13,7 @@ using namespace sol435;
 using namespace std;
 
 /*takeaways
-  - sort the intervals by the start 
+  - sort the intervals by the start
   - keep the shorter interval when
     deciding which one to delete
 */
@@ -36,10 +36,13 @@ int Solution::erase(vector<vector<int>> &intervals)
       count++;
       /* simulating deletion
          - we set the end to a smaller one
-           to represent that we are keeping
-           the interval with a smaller duration
-           to decrease the chance of being
-           overlapping again
+           of the two to simulate that we
+           are keeping the interval with
+           an earlier end time to reduce
+           the chance of being overlapping
+           again
+         - this is how we achieve removing
+           min number of intervals
       */
       end = min(end, i[1]);
     }
